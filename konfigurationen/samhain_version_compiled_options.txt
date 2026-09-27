@@ -1,0 +1,18 @@
+This is samhain (4.1.4), (c) 1999-2008 Rainer Wichmann (http://la-samhna.de).
+This software comes with ABSOLUTELY NO WARRANTY. Use at own risk.
+
+Compiled-in log facilities:
+ console (/dev/console)
+ syslog
+ logfile (/var/log/samhain/samhain.log)
+ external program
+ email
+Compiled-in modules:
+ login/logout, mount options, suid, processes, ports
+Standalone executable, IPv6 supported, compiled-in options:
+ using system malloc
+ using entropy device (/dev/random)
+ shell expansion in configuration file supported
+ posix regex support
+ optionally report auditd record of changed file
+
