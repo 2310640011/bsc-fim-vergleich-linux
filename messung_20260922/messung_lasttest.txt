@@ -1,0 +1,24 @@
+# Lasttest der dauerhaft laufenden Werkzeuge
+# Erfasst am 2026-09-22T20:17:33+00:00
+# Last: 200 Berechtigungsaenderungen in schneller Folge
+
+## Zustand vor der Last
+wazuh-execd      4948 00:00:00
+wazuh-agentd     9476 00:00:00
+wazuh-syscheckd 13528 00:00:10
+wazuh-logcollec 12396 00:00:00
+wazuh-modulesd  24064 00:00:00
+osqueryd        45860 00:00:00
+osqueryd        51208 00:00:00
+
+## Dauer der Aenderungsphase
+530 ms fuer 200 Aenderungen
+
+## Zustand nach der Last und 30 Sekunden Verarbeitungszeit
+wazuh-execd      4948 00:00:00
+wazuh-agentd     9476 00:00:00
+wazuh-syscheckd 13568 00:00:10
+wazuh-logcollec 12396 00:00:00
+wazuh-modulesd  24064 00:00:00
+osqueryd        45860 00:00:00
+osqueryd        51836 00:00:00

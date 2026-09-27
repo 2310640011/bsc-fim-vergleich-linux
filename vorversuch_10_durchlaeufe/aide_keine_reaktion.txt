@@ -1,0 +1,34 @@
+# Pruefung auf Reaktionsfaehigkeit bei AIDE
+# Erfasst am 2026-09-19T18:17:06+00:00
+
+## Suche nach Optionen zum Aufruf externer Programme in der Konfiguration
+# set environment for executable config files included by x_include
+# For a detailed description of the challenges of handling logs with
+# the x bit set are executed and their output included.
+
+## Verfuegbare Kommandozeilenoptionen
+AIDE 0.19.2 
+
+Usage: aide [options] command
+
+Commands:
+  -i, --init		Initialize the database
+  -n, --dry-init	Traverse the file system and match each file against rule tree
+  -C, --check		Check the database
+  -u, --update		Check and update the database non-interactively
+  -E, --compare		Compare two databases
+      --list		List the entries of the database in human readable format
+
+Miscellaneous:
+  -D,			--config-check			Test the configuration file
+  -p FILE_TYPE:PATH	--path-check=FILE_TYPE:PATH	Match file type and path against rule tree
+  -v,			--version			Show version of AIDE and compilation options
+  -h,			--help				Show this help message
+
+Options:
+  -c CFGFILE	--config=CFGFILE	Get config options from CFGFILE
+  -l REGEX	--limit=REGEX		Limit command to entries matching REGEX
+  -B "OPTION"	--before="OPTION"	Before configuration file is read define OPTION
+  -A "OPTION"	--after="OPTION"	After configuration file is read define OPTION
+  -L LEVEL	--log-level=LEVEL	Set log message level to LEVEL
+  -W WORKERS	--workers=WORKERS	Number of simultaneous workers (threads) for file attribute processing (i.a. hashsum calculation)

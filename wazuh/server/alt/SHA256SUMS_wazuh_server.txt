@@ -1,0 +1,2 @@
+509f5d38b2ba1f26f24fff6e931e094d993fd0827e194c191d3b92ea79ef9385  wazuh_server_alerts.log
+51d20931bbd266e14582b4b71352ef859f5c392d37b4e05d3738eca7160b3d9b  wazuh_server_ossec.log

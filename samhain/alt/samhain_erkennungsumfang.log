@@ -1,0 +1,21 @@
+WARN   :  [2026-09-19T15:27:37+0000] msg=<Invalid line 14 in configuration file: incorrect format, unrecognized option, or missing section header>
+ALERT  :  [2026-09-19T15:27:37+0000] msg=<START>, program=<Samhain>, userid=<0>, path=</etc/samhain/samhainrc>, hash=<12063B67EDB4E557371B3FDE5C76D6686EA27D40E1D405F2>, path=</var/lib/samhain/samhain-fsc.file>, hash=<4D489C1E1DD7CC72ED35EF617B83E6A59803C6329C57C63F>
+WARN   :  [2026-09-19T15:27:37+0000] msg=<Using insecure memory>
+NOTICE :  [2026-09-19T15:27:37+0000] msg=<Module not initialized>, module=<UTMP>, return_code=<9>
+NOTICE :  [2026-09-19T15:27:37+0000] msg=<Module not initialized>, module=<MOUNTS>, return_code=<9>
+NOTICE :  [2026-09-19T15:27:37+0000] msg=<Module not initialized>, module=<SUIDCHECK>, return_code=<9>
+NOTICE :  [2026-09-19T15:27:37+0000] msg=<Module not initialized>, module=<PROCESSCHECK>, return_code=<9>
+NOTICE :  [2026-09-19T15:27:37+0000] msg=<Module not initialized>, module=<PORTCHECK>, return_code=<9>
+NOTICE :  [2026-09-19T15:27:37+0000] msg=<Module not initialized>, module=<INOTIFY>, return_code=<9>
+MARK   :  [2026-09-19T15:27:37+0000] msg=<File check starting.>
+CRIT   :  [2026-09-19T15:27:37+0000] msg=<POLICY [ReadOnly] --------T->, path=</opt/fsc-test>, ctime_old=<[2026-09-19T14:03:33]>, ctime_new=<[2026-09-19T15:19:02]>, mtime_old=<[2026-09-19T14:03:33]>, mtime_new=<[2026-09-19T15:19:02]>, 
+INFO   :  [2026-09-19T15:27:37+0000] msg=<Checking       [ReadOnly]>, path=</opt/fsc-test>
+CRIT   :  [2026-09-19T15:27:37+0000] msg=<POLICY [ReadOnly] -----M--T->, path=</opt/fsc-test/testbinary>, mode_old=<-rwxr-xr-x>, mode_new=<-rwsr-xr-x>, attr_old=<------------>, attr_new=<------------>, ctime_old=<[2026-09-19T15:13:55]>, ctime_new=<[2026-09-19T15:19:02]>, 
+CRIT   :  [2026-09-19T15:27:37+0000] msg=<POLICY [ReadOnly] C-------T->, path=</opt/fsc-test/file_3.bin>, ctime_old=<[2026-09-19T14:03:33]>, ctime_new=<[2026-09-19T15:19:02]>, mtime_old=<[2026-09-19T14:03:33]>, mtime_new=<[2026-09-19T15:19:02]>, chksum_old=<9B3396968E2D6941E1854C0FB031DAFB58B1AD201F1B3764>, chksum_new=<562B7ECB7769D874521D4E382A846645766249B215B57E1E>, 
+CRIT   :  [2026-09-19T15:27:37+0000] msg=<POLICY [ReadOnly] ------UGT->, path=</opt/fsc-test/file_2.bin>, owner_old=<root>, owner_new=<nobody>, iowner_old=<0>, iowner_new=<65534>, group_old=<root>, group_new=<nogroup>, igroup_old=<0>, igroup_new=<65534>, ctime_old=<[2026-09-19T15:17:38]>, ctime_new=<[2026-09-19T15:19:02]>, 
+CRIT   :  [2026-09-19T15:27:37+0000] msg=<POLICY [ReadOnly] -----M--T->, path=</opt/fsc-test/file_1.bin>, mode_old=<-rw-r--r-->, mode_new=<-rw------->, attr_old=<------------>, attr_new=<------------>, ctime_old=<[2026-09-19T14:03:33]>, ctime_new=<[2026-09-19T15:19:02]>, 
+CRIT   :  [2026-09-19T15:27:37+0000] msg=<POLICY ADDED>, path=</opt/fsc-test/file_neu.bin>, mode_new=<-rw-r--r-->, attr_new=<------------>, imode_new=<33188>, iattr_new=<524288>, hardlinks_new=<1>, idevice_new=<0>, inode_new=<786895>, owner_new=<root>, iowner_new=<0>, group_new=<root>, igroup_new=<0>, size_old=<0>, size_new=<0>, ctime_new=<[2026-09-19T15:19:02]>, atime_new=<[2026-09-19T15:19:02]>, mtime_new=<[2026-09-19T15:19:02]>, chksum_new=<24F0130C63AC933216166E76B1BB925FF373DE2D49584E7A>
+INFO   :  [2026-09-19T15:27:37+0000] msg=<d:   2, -: 201, l:   0, |:   0, s:   0, c:   0, b:   0>
+CRIT   :  [2026-09-19T15:27:37+0000] msg=<POLICY MISSING>, path=</opt/fsc-test/file_200.bin>, mode_old=<-rw-r--r-->, attr_old=<------------>, imode_old=<33188>, iattr_old=<524288>, hardlinks_old=<1>, idevice_old=<0>, inode_old=<786645>, owner_old=<root>, iowner_old=<0>, group_old=<root>, igroup_old=<0>, size_old=<77824>, size_new=<0>, ctime_old=<[2026-09-19T14:03:33]>, atime_old=<[2026-09-19T14:53:13]>, mtime_old=<[2026-09-19T14:03:33]>, chksum_old=<5A7FF05D28BF5330C7C7C1234B50098A6F3898BA8A0D36DB>
+MARK   :  [2026-09-19T15:27:37+0000] msg=<File check completed.>, time=<0>, kBps=<11417.536000>
+ALERT  :  [2026-09-19T15:27:37+0000] msg=<EXIT>, program=<Samhain>, status=<exit_success>

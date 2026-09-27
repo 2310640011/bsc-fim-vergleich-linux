@@ -1,0 +1,10 @@
+vorher;wazuh-agentd;19;42
+vorher;wazuh-syscheckd;715;327
+vorher;wazuh-modulesd;30;11
+vorher;osqueryd-33623;11;6
+vorher;osqueryd-33628;72;26
+nachher;wazuh-agentd;21;44
+nachher;wazuh-syscheckd;724;328
+nachher;wazuh-modulesd;30;11
+nachher;osqueryd-33623;11;6
+nachher;osqueryd-33628;75;27

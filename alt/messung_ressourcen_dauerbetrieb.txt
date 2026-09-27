@@ -1,0 +1,10 @@
+# Ressourcenverbrauch im Dauerbetrieb
+# Erfasst am 2026-09-19T18:14:22+00:00
+# Spalten: Prozess, RSS in KB, kumulierte CPU-Zeit
+wazuh-agentd    10380 00:00:05
+osqueryd        46068 00:00:01
+osqueryd        53560 00:00:09
+wazuh-execd      4880 00:00:00
+wazuh-syscheckd 13700 00:00:08
+wazuh-logcollec 12360 00:00:00
+wazuh-modulesd  24376 00:00:01

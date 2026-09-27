@@ -1,0 +1,6 @@
+# Pruefung auf Reaktionsfaehigkeit bei osquery
+# Erfasst am 2026-09-19T18:17:06+00:00
+
+## Suche nach Optionen zum Aufruf externer Programme
+osquery command line flags:
+    --tls_accept_gzip                                     Enable gzip compression for HTTP responses

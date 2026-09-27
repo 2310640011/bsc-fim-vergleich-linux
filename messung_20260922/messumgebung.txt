@@ -1,0 +1,25 @@
+# Messumgebung
+Datum: 2026-09-22T20:33:27+00:00
+Host: fsc-target
+Kernel: 7.0.0-31-generic
+OS: Ubuntu 26.04.1 LTS
+CPU-Kerne: 2
+RAM: 3,3Gi
+Tick-Aufloesung: 100 Ticks pro Sekunde
+
+# Werkzeugversionen
+AIDE 0.19.2
+Open Source Tripwire(R) 2.4.3.7.0 built for x86_64-pc-linux-gnu
+Samhain 4.1.4-7build1
+osqueryi version 5.23.1
+WAZUH_VERSION="v4.14.7"
+
+# Pruefsummenverfahren
+Alle vier scan-basierten Ansaetze auf SHA-256 vereinheitlicht.
+Abweichend von den Standardeinstellungen: Tripwire (vorher HAVAL),
+Samhain (vorher TIGER192).
+
+# Testbestand
+Verzeichnis: /opt/fsc-test
+Objekte: 201
+Groesse: 12M

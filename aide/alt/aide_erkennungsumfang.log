@@ -1,0 +1,74 @@
+Start timestamp: 2026-09-19 15:27:36 +0000 (AIDE 0.19.2)
+AIDE found differences between database and filesystem!!
+
+Summary:
+  Total number of entries:	202
+  Added entries:		1
+  Removed entries:		1
+  Changed entries:		4
+
+---------------------------------------------------
+Added entries:
+---------------------------------------------------
+
+f++++++++++++++++++: /opt/fsc-test/file_neu.bin
+
+---------------------------------------------------
+Removed entries:
+---------------------------------------------------
+
+f------------------: /opt/fsc-test/file_200.bin
+
+---------------------------------------------------
+Changed entries:
+---------------------------------------------------
+
+f = p..   ...      : /opt/fsc-test/file_1.bin
+f = .ug   ...      : /opt/fsc-test/file_2.bin
+f = ...   ..H      : /opt/fsc-test/file_3.bin
+f = p..   ...      : /opt/fsc-test/testbinary
+
+---------------------------------------------------
+Detailed information about changes:
+---------------------------------------------------
+
+File: /opt/fsc-test/file_1.bin
+ Perm      : -rw-r--r--                       | -rw-------
+
+File: /opt/fsc-test/file_2.bin
+ Uid       : 0                                | 65534
+ Gid       : 0                                | 65534
+
+File: /opt/fsc-test/file_3.bin
+ SHA256    : MVdGPWlo0jsS070tveJnX0RlRyzthC4b | jVVQGWaf6VD7O+o6SATD64tlQu0X/B1/
+             wA4VzJsUuIs=                     | XKPmpyG2/wo=
+
+File: /opt/fsc-test/testbinary
+ Perm      : -rwxr-xr-x                       | -rwsr-xr-x
+
+
+---------------------------------------------------
+The attributes of the (uncompressed) database(s):
+---------------------------------------------------
+
+/var/lib/aide/aide-fsc.db
+ SHA256    : cNp6GQZLZ0QHuDc6klsO5VzUK/P0Rari
+             OVoQe1xJ73E=
+ SHA512    : q3DFQtnU49uWTz0+SuPlzonlHVkBO0H8
+             3/Ad6RV7zaofW5PAODx5VkFBjr7fw1SU
+             0N2EXuLZhMnZUIMa86fi8w==
+ STRIBOG256: V7czjxaw2YqdglPdrFRdyR8jSlWchSaA
+             fjBZIzZQe7Y=
+ STRIBOG512: JGCnddHITR7eW6tlrtpNpkiYKqcn6hLf
+             3V9/28CfSAY98KVLhADYbNbeUT2tWvL/
+             +fPVQxDeO8TX1GizlByJog==
+ SHA512/256: jxhHeQdcpXG6+iN6nAe2VqG+kgxSu2PP
+             xVxkN3UJ39M=
+ SHA3-256  : GM/x4Cbdg82MwIqIZuTyMdKfLByGSXE1
+             5D3Tjz2AxhQ=
+ SHA3-512  : rGVEq+WM5ub7vSDnVhwdvYpAt0G2Buh2
+             26EjNFWalL87MPSylS8FUMyJeZiad63V
+             YKGVzMUxQDBk4YCq6i2lIg==
+
+
+End timestamp: 2026-09-19 15:27:36 +0000 (run time: 0m 0s)

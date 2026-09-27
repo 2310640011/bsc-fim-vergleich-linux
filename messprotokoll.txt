@@ -1,0 +1,61 @@
+Messprotokoll fsc-target
+Erstellt: 2026-09-27T00:24:40+00:00
+
+== System ==
+ Static hostname: fsc-target
+       Icon name: computer-vm
+         Chassis: vm 🖴
+      Machine ID: aa891aa8c65b418aa6cf79467203282a
+         Boot ID: 2ec5f4fd2df94f28a1801346478c17b3
+    Product UUID: f6692dec-8049-5941-b13d-ef972bd1e901
+  Virtualization: oracle
+Operating System: Ubuntu 26.04.1 LTS
+          Kernel: Linux 7.0.0-34-generic
+    Architecture: x86-64
+ Hardware Vendor: innotek GmbH
+  Hardware Model: VirtualBox
+Linux fsc-target 7.0.0-34-generic #34-Ubuntu SMP PREEMPT_DYNAMIC Wed Sep  2 14:29:37 UTC 2026 x86_64 GNU/Linux
+
+== CPU und Speicher ==
+CPU(s):                                  2
+Model name:                              AMD Ryzen 9 7845HX with Radeon Graphics
+Thread(s) per core:                      1
+Hypervisor vendor:                       KVM
+Virtualization type:                     full
+               total        used        free      shared  buff/cache   available
+Mem:           3,3Gi       489Mi       2,4Gi       1,1Mi       688Mi       2,8Gi
+
+== Datentraeger und Dateisysteme ==
+NAME                       SIZE TYPE FSTYPE      MOUNTPOINTS
+loop0                     66,8M loop squashfs    /snap/core24/1643
+loop1                      1,5M loop squashfs    /snap/hwctl/123
+loop2                     50,1M loop squashfs    /snap/snapd/27710
+sda                         30G disk             
+├─sda1                       1M part             
+├─sda2                       2G part ext4        /boot
+└─sda3                      28G part LVM2_member 
+  └─ubuntu--vg-ubuntu--lv   14G lvm  ext4        /
+sdb                          8G disk xfs         
+sdc                          8G disk ext4        
+sr0                       1024M rom              
+
+== Testbestand ==
+Objekte: 201
+Groesse: 12M
+
+== Werkzeugversionen ==
+AIDE 0.19.2
+Open Source Tripwire(R) 2.4.3.7.0 built for x86_64-pc-linux-gnu
+
+This is samhain (4.1.4), (c) 1999-2006 Rainer Wichmann (http://la-samhna.de).
+osqueryi version 5.23.1
+WAZUH_VERSION="v4.14.7"
+WAZUH_REVISION="rc1"
+WAZUH_TYPE="agent"
+
+== Paketversionen ==
+ii  aide           0.19.2-3        amd64        Advanced Intrusion Detection Environment - dynamic binary
+ii  osquery        5.23.1-1.linux  amd64        osquery is an operating system instrumentation toolchain.
+ii  samhain        4.1.4-7build1   amd64        Data integrity and host intrusion alert system
+ii  tripwire       2.4.3.7-6build1 amd64        file and directory integrity checker
+ii  wazuh-agent    4.14.7-1        amd64        Wazuh agent

@@ -1,0 +1,96 @@
+<!-- Local rules -->
+
+<!-- Modify it at your will. -->
+<!-- Copyright (C) 2015, Wazuh Inc. -->
+
+<!-- Example -->
+<group name="local,syslog,sshd,">
+
+  <!--
+  Dec 10 01:02:02 host sshd[1234]: Failed none for root from 1.1.1.1 port 1066 ssh2
+  -->
+  <rule id="100001" level="5">
+    <if_sid>5716</if_sid>
+    <srcip>1.1.1.1</srcip>
+    <description>sshd: authentication failed from IP 1.1.1.1.</description>
+    <group>authentication_failed,pci_dss_10.2.4,pci_dss_10.2.5,</group>
+  </rule>
+
+</group>
+
+<group name="bsc,linux,auditd,privilege_escalation,">
+  <rule id="100200" level="12">
+    <decoded_as>auditd</decoded_as>
+    <match>bsc_suid_privesc</match>
+    <description>BSC: SUID privilege escalation via sys-maintenance detected</description>
+    <mitre>
+      <id>T1548.001</id>
+    </mitre>
+  </rule>
+</group>
+
+<group name="bsc,linux,auditd,privilege_escalation,">
+  <rule id="100202" level="12">
+    <if_sid>80700</if_sid>
+    <field name="audit.key">bsc_suid_privesc</field>
+    <field name="audit.command">sys-maintenance</field>
+    <field name="audit.uid">33</field>
+    <field name="audit.euid">0</field>
+    <description>BSC: www-data executed SUID sys-maintenance with effective root privileges</description>
+    <mitre>
+      <id>T1548.001</id>
+    </mitre>
+  </rule>
+</group>
+
+<group name="bsc,linux,auditd,persistence,cron,">
+  <rule id="100203" level="12">
+    <if_sid>80700</if_sid>
+    <field name="audit.key">bsc_cron_persistence</field>
+    <field name="audit.uid">33</field>
+    <field name="audit.euid">0</field>
+    <description>BSC: www-data modified cron persistence with effective root privileges</description>
+    <mitre>
+      <id>T1053.003</id>
+    </mitre>
+  </rule>
+</group>
+
+<group name="bsc,linux,auditd,privilege_escalation,">
+  <rule id="100204" level="12">
+    <if_sid>80700</if_sid>
+    <field name="audit.key">bsc_suid_localbin</field>
+    <field name="audit.syscall">59</field>
+    <field name="audit.success">yes</field>
+    <field name="audit.uid">33</field>
+    <field name="audit.euid">0</field>
+    <field name="audit.file.name" type="pcre2">^/usr/local/bin/.+$</field>
+    <field name="audit.file.mode" type="pcre2">^010[4-7][0-7]{3}$</field>
+    <description>BSC: www-data executed a SUID program from /usr/local/bin with effective root privileges</description>
+    <mitre>
+      <id>T1548.001</id>
+    </mitre>
+  </rule>
+</group>
+
+<group name="bsc,linux,syscheck,privilege_escalation,">
+  <rule id="100205" level="12">
+    <if_sid>550</if_sid>
+    <field name="file" type="pcre2">^/usr/local/bin/.+$</field>
+    <field name="perm" type="pcre2">^rws</field>
+    <description>BSC: SUID bit was newly set on a file under /usr/local/bin (FIM)</description>
+    <mitre>
+      <id>T1548.001</id>
+    </mitre>
+  </rule>
+</group>
+
+<group name="fsc,syscheck,">
+  <!-- Erkennt das Setzen des SUID-Bits im Testverzeichnis -->
+  <rule id="100300" level="12">
+    <if_sid>550</if_sid>
+    <field name="file" type="pcre2">^/opt/fsc-test/.+$</field>
+    <field name="perm" type="pcre2">^rws</field>
+    <description>FSC: SUID-Bit im Testverzeichnis gesetzt</description>
+  </rule>
+</group>

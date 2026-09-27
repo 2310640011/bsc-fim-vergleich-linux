@@ -1,0 +1,11 @@
+Skalierungsmessung 26.09.2026 - Scan-Dauer in ms
+Runde 1 je Bestandsgroesse als Warmlauf ausgeschlossen, daher n = 9.
+
+  2000 aide         n=9   Median=   347 ms  Min=   308 Max=   365 Std=   22.9
+  2000 samhain      n=9   Median=   625 ms  Min=   607 Max=   643 Std=   11.1
+  2000 tripwire     n=9   Median=   891 ms  Min=   783 Max=   942 Std=   51.5
+  2000 shellskript  n=9   Median=  4141 ms  Min=  4092 Max=  4218 Std=   43.1
+ 20000 aide         n=9   Median=  3080 ms  Min=  3040 Max=  3118 Std=   25.7
+ 20000 samhain      n=9   Median=  5747 ms  Min=  5689 Max=  5921 Std=   78.5
+ 20000 tripwire     n=9   Median=  5002 ms  Min=  4625 Max=  5557 Std=  348.3
+ 20000 shellskript  n=9   Median= 46321 ms  Min= 44976 Max= 46954 Std=  672.3

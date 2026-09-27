@@ -1,0 +1,27 @@
+# Pruefung auf Reaktionsfaehigkeit bei Tripwire
+# Erfasst am 2026-09-19T18:16:42+00:00
+
+## Suche nach Optionen zum Aufruf externer Programme in der Konfiguration
+keine Treffer
+
+## Verfuegbare Kommandozeilenoptionen
+tripwire: File integrity assessment application.
+
+Open Source Tripwire(R) 2.4.3.7.0 built for x86_64-pc-linux-gnu
+
+Open Source Tripwire 2.4 Portions copyright 2000-2018 Tripwire, Inc.  Tripwire is a registered
+trademark of Tripwire, Inc. This software comes with ABSOLUTELY NO WARRANTY;
+for details use --version. This is free software which may be redistributed
+or modified only under certain conditions; see COPYING for details.
+All rights reserved.
+Usage:
+
+Database Initialization:  tripwire [-m i|--init] [options]
+Integrity Checking:  tripwire [-m c|--check] [object1 [object2...]]
+Database Update:  tripwire [-m u|--update]
+Policy Update:  tripwire [-m p|--update-policy] policyfile.txt
+Test:  tripwire [-m t|--test] --email address
+
+Type 'tripwire [mode] --help' OR
+'tripwire --help mode [mode...]' OR
+'tripwire --help all' for extended help

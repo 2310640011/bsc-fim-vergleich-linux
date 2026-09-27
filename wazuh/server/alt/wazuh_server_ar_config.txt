@@ -1,0 +1,21 @@
+  <!-- Active Response fuer den Werkzeugvergleich -->
+  <command>
+    <name>fsc-remove-suid</name>
+    <executable>fsc-remove-suid.sh</executable>
+    <timeout_allowed>no</timeout_allowed>
+  </command>
+
+  <active-response>
+    <command>fsc-remove-suid</command>
+    <location>local</location>
+    <rules_id>100300</rules_id>
+  </active-response>
+
+</ossec_config>
+
+<ossec_config>
+  <localfile>
+    <log_format>syslog</log_format>
+    <location>/var/ossec/logs/active-responses.log</location>
+  </localfile>
+

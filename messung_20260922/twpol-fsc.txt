@@ -1,0 +1,28 @@
+# Tripwire-Policy fuer den Werkzeugvergleich
+# Ueberwacht ausschliesslich das Testverzeichnis /opt/fsc-test
+
+@@section GLOBAL
+TWBIN = /usr/sbin;
+TWETC = /etc/tripwire;
+TWVAR = /var/lib/tripwire;
+
+@@section FS
+
+# Zu pruefende Attribute:
+#   p = Zugriffsrechte (erkennt auch das SUID-Bit)
+#   i = Inode-Nummer
+#   n = Anzahl der Hardlinks
+#   u = Eigentuemer (User)
+#   g = Gruppe
+#   s = Dateigroesse
+#   m = Zeitpunkt der letzten Aenderung
+#   H = Pruefsumme des Dateiinhalts
+FSCRULE = +pinugsmS;
+
+(
+  rulename = "FSC Testverzeichnis",
+  severity = 100
+)
+{
+  /opt/fsc-test -> $(FSCRULE);
+}
