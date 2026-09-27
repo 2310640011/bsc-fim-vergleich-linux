@@ -21,7 +21,8 @@ Dateisystemintegrität unter Linux“ (Lukas Kogler, FH Burgenland, 2026).
     messung_20260922/            Hauptmessung, 30 Durchläufe
     vorversuch_10_durchlaeufe/   Vorversuche, 10 Durchläufe
     skalierung_20260926/         Skalierungsmessung, 2.000 und 20.000 Objekte
-    ablage_20260927/             Dateisystem, Speicherort, Kontrollmessungen
+    ablage_20260927/             Dateisystem, Speicherort, Hashverfahren
+    ereignisbasiert_20260927/    inotify-Reaktionszeit, zurueckgenommene Aenderung
     konfigurationen/             Konfigurationsdateien zum Stand der Messungen
     alt/                         Material der Vorversuche vom 19.09.2026
     messprotokoll.txt            Systemdaten, Dateisysteme, Werkzeugversionen
