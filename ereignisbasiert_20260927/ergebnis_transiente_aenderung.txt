@@ -1,0 +1,13 @@
+Test: Erkennung einer zurueckgenommenen Aenderung, 27.09.2026, fsc-target.
+SUID-Bit gesetzt und nach zwei Sekunden zurueckgenommen, danach Modus, Groesse,
+Inhalt und mtime wie im Ausgangszustand.
+
+Wazuh   : erkannt, SUID-Bit selbsttaetig zurueckgesetzt
+osquery : erkannt, zwei neue Eintraege im Results-Log
+Samhain : erkannt, meldet POLICY [ReadOnly] --------T- mit ctime_old/ctime_new
+AIDE    : keine Meldung (Attributmaske p+u+g+s+i+n+sha256, ohne Zeitstempel)
+Tripwire: keine Meldung (Property Mask +pinugsmS, mtime ja, ctime nein)
+Skript  : keine Meldung (prueft nur den Inhaltshash)
+
+Ergebnis gilt auch dann, wenn die Aenderung zwei Sekunden bestand und der
+Wazuh-Agent gestoppt war.
