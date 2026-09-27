@@ -31,7 +31,7 @@ Dateisystemintegrität unter Linux“ (Lukas Kogler, FH Burgenland, 2026).
 
 Die Unterordner alt/ innerhalb der Werkzeugordner enthalten Logs und
 Konfigurationen der Vorversuche vom 19.09.2026. Maßgeblich für die in der Arbeit
-genannten Werte sind messung_20260922, skalierung_20260926 , ablage_20260927 und ereignisbasiert_20260927.
+genannten Werte sind messung_20260922, skalierung_20260926, ablage_20260927 und ereignisbasiert_20260927.
 
 ## Aufbau
 
