@@ -1,58 +1,37 @@
-# Werkzeugvergleich Dateisystemintegrität unter Linux
+# Begleitdaten zur Bachelorarbeit
 
-Begleitmaterial zur Bachelorarbeit „Vergleich von Werkzeugen zur Überwachung der
-Dateisystemintegrität unter Linux“ (Lukas Kogler, FH Burgenland, 2026).
+Vergleich von Werkzeugen zur Überwachung der Dateisystemintegrität unter Linux
+Lukas Kogler, Matrikelnummer 2310640011, FH Burgenland
 
-## Untersuchte Ansätze
+Alle Messdaten, Messskripte, Konfigurationen und Protokolle zur Arbeit.
+`SHA256SUMS` im Hauptverzeichnis deckt sämtliche Dateien ab:
 
-| Ansatz | Version im Labor | Architekturprinzip |
-|---|---|---|
-| AIDE | 0.19.2 | periodischer Vergleich mit Referenzdatenbank |
-| Open Source Tripwire | 2.4.3.7 | periodischer Vergleich mit Referenzdatenbank |
-| Samhain | 4.1.4 | periodischer Vergleich, Scan-Modus |
-| Wazuh FIM | siehe messprotokoll.txt | ereignisbasiert über inotify |
-| osquery | 5.23.1 | abfragebasiert, Erfassung über inotify |
-| Kontrollimplementierung | fsc-simple-check-v2.sh | periodischer Vergleich, eigenes Shell-Skript |
-
-## Struktur
-
-    aide/ Tripwire/ samhain/     Logs, Konfigurationen und Reaktionsskripte
-    osquery/ wazuh/              je Werkzeug
-    messung_20260922/            Hauptmessung, 30 Durchläufe
-    vorversuch_10_durchlaeufe/   Vorversuche, 10 Durchläufe
-    skalierung_20260926/         Skalierungsmessung, 2.000 und 20.000 Objekte
-    ablage_20260927/             Dateisystem, Speicherort, Hashverfahren
-    ereignisbasiert_20260927/    inotify-Reaktionszeit, zurueckgenommene Aenderung
-    konfigurationen/             Konfigurationsdateien zum Stand der Messungen
-    alt/                         Material der Vorversuche vom 19.09.2026
-    messprotokoll.txt            Systemdaten, Dateisysteme, Werkzeugversionen
-    auswertung.py                berechnet die Kennwerte aus Kapitel 4
-    SHA256SUMS                   Prüfsummen aller Dateien
-
-Die Unterordner alt/ innerhalb der Werkzeugordner enthalten Logs und
-Konfigurationen der Vorversuche vom 19.09.2026. Maßgeblich für die in der Arbeit
-genannten Werte sind messung_20260922, skalierung_20260926, ablage_20260927 und ereignisbasiert_20260927.
-
-## Aufbau
-
-Alle Messungen liefen auf der virtuellen Maschine fsc-target (Ubuntu) mit dem
-überwachten Verzeichnis /opt/fsc-test, 201 Objekte, etwa 12 MB. Die Inhaltsprüfung
-war für alle scanbasierten Ansätze auf SHA-256 vereinheitlicht. Der Wazuh-Manager
-lief auf einer separaten virtuellen Maschine. Systemdaten und Werkzeugversionen
-stehen in messprotokoll.txt. Der erste Durchlauf jeder Messreihe wurde als
-Warmlauf ausgeschlossen.
-
-## Reproduktion
-
-    python3 auswertung.py
     sha256sum -c SHA256SUMS
 
-Die Messskripte in skalierung_20260926/ und ablage_20260927/ sind blockweise
-kommentiert. Sie sind nicht in einem Zug lauffähig, weil Tripwire beim Aufbau der
-Referenzdatenbank eine Passphrase benötigt.
+## Messreihen
 
-## Hinweis
+- `messung_20260922` – endgültige Messreihen mit 30 Durchläufen: Scan-Dauer,
+  Ressourcen, Dauerbetrieb, Lasttest, osquery-Meldelatenz, Wazuh-Reaktionszeit
+- `skalierung_20260926` – Skalierungsmessung mit 2.000 und 20.000 Objekten
+- `ablage_20260927` – Kontrollmessungen zu Ablage und Dateisystem,
+  zum Prüfsummenverfahren und zum Ressourcenverbrauch
+- `ereignisbasiert_20260927` – Samhain im inotify-Modus, Test auf Fehlalarme,
+  erster Einzelfall einer zurückgenommenen Änderung
+- `transienz_20261001` – 120 Läufe zur zurückgenommenen Änderung über
+  sechs Zeitfenster
+- `attributkontrolle_20261001` – Kontrollmessung mit veränderter
+  Attributmenge in AIDE und Samhain
+- `vorversuch_10_durchlaeufe` – Vorversuche mit zehn Durchläufen,
+  unverändert erhalten
 
-ablage_20260927/verworfen_202objekte.csv enthält eine verworfene Messreihe. Der
-ext4-Datenträger hatte durch lost+found 202 statt 201 Objekte; die Messung wurde
-nach Korrektur wiederholt und ist hier nur zur Vollständigkeit dokumentiert.
+## Werkzeugbezogene Belege
+
+`aide`, `Tripwire`, `samhain`, `osquery`, `wazuh` – Protokolle zum
+Erkennungsumfang, zur Reaktionsfähigkeit und die Reaktionsskripte.
+
+## Weiteres
+
+- `konfigurationen` – eingesetzte Konfigurationsdateien aller Werkzeuge
+  sowie das Skript der Kontrollimplementierung
+- `auswertung.py` – berechnet die in Kapitel 4 angegebenen Kennwerte
+- `messprotokoll.txt` – Systemdaten und Werkzeugversionen
